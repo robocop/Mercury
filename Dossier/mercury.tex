@@ -76,6 +76,10 @@
 		\end{figure}
 	 \newpage	
 	   \section{Expérience}
+	   
+	   	Note : les calculs du Cx et le dimensionnement du ressort sont faux : ils ont été réalisé avec des connaissances de Terminale. J'ai jugé bon de laisser ces calculs qui permettent de comprendre l'échec de l'expériance.
+	   	Des calculs plus justes pourront etre trouvés dans l'annexe "Vers Mercury 2".
+	  
              \subsection{Valeurs mesurées }
 
 		Pour mesurer expérimentalement le $C_x$ de la fusée, nous allons mettre un ressort sur lequel va pousser le propulseur.
@@ -107,12 +111,12 @@
 		Si on note $\alpha$ l'angle de la fusée par rapport au sol, alors on a : 
 		  $$ P_f = m * g * \cos{(90-\alpha)}$$
 		D'où : 
-		  $$ P_f = - m * g * \cos{\alpha}$$		
+		  $$ P_f =  m * g * \sin{\alpha}$$		
 		On a donc 
-		  $$ R_{air} = V - (- m * g * \cos{\alpha})$$
-		  $$ \Leftrightarrow 0.5 * C_x * \rho_{air} * S * v^2 = V + m * g * \cos{\alpha} $$
+		  $$ R_{air} = V - ( m * g * \sin{\alpha})$$
+		  $$ \Leftrightarrow 0.5 * C_x * \rho_{air} * S * v^2 = V - m * g * \sin{\alpha} $$
 		D'où
-		  $$ C_x = \frac{2(V + m * g * \cos{\alpha})}{\rho_{air} * S * v^2} $$
+		  $$ C_x = \frac{2(V - m * g * \sin{\alpha})}{\rho_{air} * S * v^2} $$
 		
 		On mesure l'angle de la fusée avec un capteur d'accélération 3 axes, la vitesse de la fusée avec ce même capteur couplé à un capteur de pression (en utilisant la méthode d'Euler).
 		V est obtenu en mesurant l'élongation du ressort sur le propulseur à l'aide d'un potentiomètre linéaire.
