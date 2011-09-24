@@ -9,6 +9,10 @@
 \usepackage{tikz}
 \usepackage{float}
 \usepackage{graphicx} 
+\usepackage{wrapfig}
+\usepackage{url}
+\usepackage{listings}
+
 \usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,fit,positioning,shapes.symbols,chains}
 
 
@@ -77,8 +81,8 @@
 	 \newpage	
 	   \section{Expérience}
 	   
-	   	Note : les calculs du Cx et le dimensionnement du ressort sont faux : ils ont été réalisé avec des connaissances de Terminale. J'ai jugé bon de laisser ces calculs qui permettent de comprendre l'échec de l'expériance.
-	   	Des calculs plus justes pourront etre trouvés dans l'annexe "Vers Mercury 2".
+	   	Note : les calculs du Cx et le dimensionnement du ressort sont faux : ils ont été réalisés avec des connaissances de Terminale. J'ai jugé bon de laisser ces calculs qui permettent de comprendre l'échec de l'expérience.
+	   	Des calculs plus justes pourront être trouvés dans l'annexe en fin de document.
 	  
              \subsection{Valeurs mesurées }
 
@@ -128,7 +132,7 @@
 		\end{figure}
 		\begin{figure}[H]
 		    \begin{center}
-			\caption{ Système de l'expérience finalisé en fin d'année }
+			\caption{ Système de l'expérience finalisée en fin d'année }
 			\includegraphics[height=244px, width=326px]{Photos_Mercury/systemeressort.jpg}
 		     \end{center}
 		\end{figure}
@@ -202,10 +206,10 @@
 		L'électronique de l'expérience est basée sur une arduino.\\
 
 		Nous avions prévu de mettre un capteur d'accélération numérique 3 axes, ainsi qu'un capteur de pression analogique\footnote{``MPX5100AP``, chez Farnell}, en plus du ressort.
-		Durant la campagne, nous avons décider d'émettre les données avec un émetteur Kiwi, fournit par le \textsc{cnes}. \\
+		Durant la campagne, nous avons décidé d'émettre les données avec un émetteur Kiwi, fournit par le \textsc{cnes}. \\
 
 		Cependant alors que la fusée était entièrement prête, à une nuit du lancement, le capteur d'accélération a cessé de fonctionner.
-		Dans la précipitation, nous avons trouvé un club qui nous a donné un gyroscope analogique 2 axes\footnote{``Dual axis IXZ-500'', voir ici : http://www.sparkfun.com/products/9410.} et Antoine l'a monté et intégré dans le programme dans la nuit.
+		Dans la précipitation, nous avons trouvé un club qui nous a donné un gyroscope analogique 2 axes\footnote{``Dual axis IXZ-500'', voir ici : http://www.sparkfun.com/products/9410.} qui a été monté et intégré dans la nuit.
 		
 		Ainsi, dans la version qui a volé de la fusée, nous avons un gyroscope deux axes, un capteur de pression et le potentiomètre du ressort.
 		
@@ -367,7 +371,7 @@
 	      
 	      \subsubsection{Réalisation du parachute}
 
-	      Nous utilisons un parachute en croix constitué de 5 carrés de même aire. La surface d'un carré est donc donné par : 
+	      Nous utilisons un parachute en croix constitué de 5 carrés de même aire. La surface d'un carré est donc donnée par : 
 		$$S_{carre} = \frac{1.5}{5} = 0.3m^2 $$
 		D'ou la longueur d'un coté est donné par : 
 		$$l_c = \sqrt{0.3} \approx 0.5m $$
@@ -387,7 +391,7 @@
 		\end{figure}
 		\floatplacement{figure}{t}
 	   \subsection{La minuterie}
-		L'ouverture se fait avec un électroaimant inversé : quand on alimente l'électroaimant (en 24V), celui-ci cesse son champs magnétique.\\
+		L'ouverture se fait avec un électroaimant inversé : quand on alimente l'électroaimant (en 24V), celui-ci cesse son champ magnétique.\\
 		La minuterie compte le temps avec un 4060 (alimenté en 5V). Au bout du décompte, elle active un relais et alimente l'électroaimant.\\
 		La porte s'ouvre, et le parachute se déplie.
 	      \begin{figure}[H]
@@ -403,7 +407,7 @@
 		    \end{center}
 	      \end{figure}
 		   Le circuit possède deux régulateurs de tension, qui produisent du 5V et du 24V, respectivement pour le 4060 et pour l'électroaimant.\\
-		   Ils doivent être alimenté par du 9V et du 27V.
+		   Ils doivent être alimentés par du 9V et du 27V.
 		   La minuterie requiert donc $3+1$ piles 9V.
 		  
 		   On règle le temps du décompte avec une résistance variable.\\
@@ -415,7 +419,7 @@
 		    $$ t = 256 * 2.3 * R_t * 470*10^{-9} $$
 		   Ou encore : 
 		    $$ R_t = \frac{t}{256 * 2.3 * 470 * 10^{-9}}$$
-		   La commande de l'électroaimant se faisait à l'origine avec un transistor, mais nous l'avons remplacé par un relais.
+		   La commande de l'électroaimant se faisait à l'origine avec un transistor, mais nous l'avons remplacée par un relais.
 
 	  \subsection{La trajectoire de la fusée}
 	      La trajectoire de la fusée se calcule avec les formules de Newton\footnote{Voir ``Le vol de la fusée'', (document Planète-Sciences)}ou avec les logiciels de Planète-Science comme trajecto : 
@@ -435,7 +439,7 @@
 	    Finalement, c'est Thibault qui a trouvé la solution : retourner les ailerons ! En effet, d'après stabilito, en mettant les ailerons a l'envers, la fusée redevient stable.
 	      \begin{figure}[H]
 		    \begin{center}
-		      \caption{Les ailerons, à l'envers, c'est mieux (et ça fait peur au controle).}
+		      \caption{Les ailerons, à l'envers, c'est mieux (et ça fait peur au contrôle).}
 		      \includegraphics[height=244px, width=326px]{Photos_Mercury/ailerons-controles.jpg}
 		    \end{center}
 	      \end{figure}
@@ -457,13 +461,13 @@
 	
 	Nous avons participé à la campagne de lancement C'space dans les Landes au \textsc{CELM} à Biscarrosse.
 	Cette semaine est la concrétisation du travail effectué tout au long de l'année.
-	Une dizaine de membres de l'association Eurêka+ y ont participé pour y lancer 4 de leur projet.
+	Une dizaine de membres de l'association Eurêka+ y ont participé pour y lancer 4 de leurs projets.
 	Pour l'équipe Mercury l'objectif est de finaliser la fusée, de passer les qualifications pour procéder au vol de la fusée.
 
 	  \subsection{Le vol}
 	  
 	  Le vol a eu lieu jeudi dans le début de l'après-midi, sur une rampe ``Obélix''. 	
-	  Les ailerons à l'envers ont bien assurés la stabilité de la fusée.
+	  Les ailerons à l'envers ont bien assuré la stabilité de la fusée.
 
 	  Le parachute s'est correctement ouvert au bout des 15 secondes comme prévu.
 	  Cependant, le parachute s'est mal déplié et la fusée a fait une torche, probablement à cause de la sangle trop courte qui retenait le parachute à la fusée.
@@ -473,7 +477,7 @@
 	  Sur les vidéos du décollage qui ont été prises par différentes personnes de l'équipe de Planète-Sciences, on aperçoit que la butée de l'expérience saute alors même que la fusée n'est pas sortie de la rampe.
 	  Nous avons donc sous-dimensionné le ressort, peut-être aurait-t-il fallu prendre en compte la grande énergie que libère l'impact entre le propulseur dans sa cage et le ressort au premier contact.
 	  
-	  La butée ayant sautée, le potentiomètre s'est cassé très rapidement et cette partie de l'expérience est donc un échec.
+	  La butée ayant sauté, le potentiomètre s'est cassé très rapidement et cette partie de l'expérience est donc un échec.
 	  On pourra cependant analyser les données du gyroscope et du capteur de pression.
 
 
@@ -554,23 +558,21 @@
 	  \end{figure}		 
 	  \subsubsection{Calcul du $C_x$}
 	  Etant donné que nous n'avons pas de données valables pour l'expérience, nous ne pouvons pas calculer à partir de nos données expérimentales une valeur du $C_x$.
-	  Nous pourrions toutefois obtenir une valeur en se basant sur la poussée du constructeur théorique, et en dérivant deux fois l'altitude donnée par le capteur de pression pour avoir l'accélération.
+	  Nous pourrions toutefois obtenir une valeur en nous basant sur la poussée du constructeur théorique, et en dérivant deux fois l'altitude donnée par le capteur de pression pour avoir l'accélération.
 	  Cependant la précision de ce calcul est indéterminable, donc cette valeur serait sans intérêt.
 	 \newpage
 	  \section{Conclusion}
 	  
 	  Ainsi s'achève cette aventure scientifique palpitante. On retiendra surtout du projet tout ce qu'il nous a appris.
-	  D'un point de vu technique tout d'abord, avec la manipulation de machines outils (comme le tour par exemple) ou encore la conception d'un circuit électronique.
+	  D'un point de vue technique tout d'abord, avec la manipulation de machines outils (comme le tour par exemple) ou encore la conception d'un circuit électronique.
 	  Construire une fusée c'est donc l'occasion de mettre en pratique des connaissances théoriques acquises au lycée.
 	  C'est également une aventure humaine : Mercury résulte du travail d'une équipe qui s'est réunie chaque samedi de l'année dans les locaux de Eurêka+ à Marly-le-Roi et qui a vécu une semaine intense durant la campagne de lancement à Biscarrosse.
 	  
-	  On retiendra également l'erreur que nous avons commise sur le calcul du ressort. Après analyse, il semblerait que l'erreur vienne d'une mauvaise modélisation du problème : 
-	  nous avons vu le ressort sous un modèle statique en étudiant les forces que subissait le ressort, il aurait été judicieux de considérer un modèle dynamique en prenant en compte l'amortissement du ressort.
-	  Cela nous aurait renvoyé à une équation différentielle du second ordre impliquant des oscillations, et peut-être une résonance.
+	  On retiendra également l'erreur que nous avons commise sur le calcul du ressort. Après analyse, il semblerait que l'erreur vienne d'une mauvaise modélisation du problème, et nous vous invitons à lire l'annexe pour un calcul plus juste.
 
-	  Modéliser correctement le comportement d'une fusée demande donc outils de la mécanique du solide compliqués qui n'étaient pas à notre disposition en terminale.
+	  Modéliser correctement le comportement d'une fusée demande des outils de la mécanique qui n'étaient pas à notre disposition en terminale.
 	  
-	  Enfin nous aimerions remercier l'équipe de Planète-Sciences pour le prix que nous avons reçu, ainsi que les animateurs de Eurêka+, Thibault et Adrien, sur qui toute l'association repose et sans qui l'aventure n'aurait pu décoller !
+	  Enfin nous aimerions remercier l'équipe de Planète-Sciences pour le prix que nous avons reçu, ainsi que les animateurs de Eurêka+, Thibault et Adrien, sur lesquels toute l'association repose et sans lesquels l'aventure n'aurait pu décoller !
 
 	  
 	      \begin{figure}[H]
@@ -585,6 +587,90 @@
 		      \includegraphics[height=244px, width=326px]{Photos_Mercury/Mercury_Prix_PS_2010.jpg}
 		    \end{center}
 	      \end{figure}
+	\newpage
+	\section{Annexe : dimensionnement du ressort}
+	
+    Dans le premier calcul du ressort que nous avons effectué (calcul présenté en partie 2.2) nous n'avons pas correctement défini le point sur lequel on appliquait le PFD, et nous avions fait des hypothèses fausses sur le comportement du ressort (qui pourtant nous semblaient logiques).
+    Ce calcul est donc plus délicat que prévu, c'est pourquoi je l'ai refait ici, plusieurs mois après le vol, avec j'espère plus de précisions.
+    
+	\subsection{Etude théorique}
+	L'objectif est de déterminer quel ressort choisir, c'est à dire quelle élongation $l_0$ et quelle raideur k choisir pour pouvoir 	mesurer le plus précisément possible la poussée du propulseur.
 
 
+	En pratique $l_0$ doit être de l'ordre de 20 cm, j'essaye donc plutôt de calculer la constante k. \newpage
+
+	\begin{wrapfigure}[23]{l}{7cm}
+	\caption{Schéma du ressort dans le référentiel de la fusée à l'instant t}
+	\includegraphics[width=5cm]{Photos_Mercury/schema_t.png}
+	\end{wrapfigure}
+
+
+	On distingue d'abord le référentiel lié à la Terre $R_0$ Galiléen et le référentiel lié à la fusée $R$ non Galiléen.
+
+	On fait le bilan sur le ressort en appelant m sa masse, et x la position de son centre de gravité selon la longueur de la fusée, 	l'origine étant choisie pour correspondre au bas du ressort quand celui-ci ne subit aucune force (avant le décollage donc).
+
+	On considère ensuite que le centre de gravité du ressort est au milieu de celui-ci.
+	On a donc x(0) = l0 /2. 
+
+	Le ressort subit  : 
+	\begin{itemize}
+	\item $\vec{F_1}$, la force du propulseur dont le constructeur donne une courbe expérimentale en fonction du temps (c'est un PRO-54).
+	\item $\vec{F_2}$, la force exercée par la plaque de poussée (en verte kaki) sur le ressort
+	\item La force d'inertie $-m \vec{a_e}$ où $\vec{a_e}$ est l'accélération subie par la fusée en son centre de gravité dans le 	référentiel R0, que l'on peut donc calculer en fonction du temps avec la méthode d'Euler pour les simulations en donnant une valeur 	"classique" au Cx comme 0.6 (et cette accélération sera mesurée en vrai).
+	\item La force de Coriolis $-m\vec{\Omega} \wedge \vec{v_r}$, $\vec{\Omega}$ est la vecteur instantané de rotation donc $\vec{\Omega} = (\dot{\theta}, \dot{\varphi}, \dot{\psi})$ et $\vec{v_r}$ est la vitesse relation du ressort dans R donc $\vec{v_r} = (\dot{x}, 0, 0)$.
+On a donc $\vec{\Omega} \wedge \vec{v_r} = (0, \dot{\psi} \dot{x}, \dot{\varphi} \dot{x})$.
+En conclusion le produit vectoriel est nul sur l'axe des x : la force de Coriolis ne fait pas partie des forces subies par le ressort 
+
+	\item Son poids projeté sur l'axe de la fusée : $-mg*\sin{\theta}$
+	\end{itemize}
+
+	En écrivant le PFD sur l'axe des x, on obtient donc : $$ m\ddot{x} = F_1 - F_2 -m{a_e}_x -mg*\sin{\theta}$$ où ${a_e}_x =$ projeté de $a_e$ sur l'axe de la fusée.
+
+	En ce qui concerne F1 c'est la force du propulseur donc on peut l'estimer avec les données de poussées fournies par le constructeur 	du Pro-54.
+	En ce qui concerne F2, on déduit son expression en appliquant la troisième loi de Newton sur la plaque de poussée : $-\vec{F2}$ est 	la force subie par la plaque de poussée du ressort. L'allongement du ressort est $2(l0-x(t))$ donc :
+	$$F2 = k(l0-2x)$$
+
+
+	Finalement en reportant on obtient : 
+
+	$$F_{prop} + k(l0-2x) = m \ddot{x}+m{a_e}_x +mg\sin{\theta}$$ 
+
+	avec $x(0) = l0/2$.
+
+	Cette équation donne des conditions sur k.
+
+	On souhaite de plus que quand le ressort est compressé au maximum, il y ait une différence de longueur avec la longueur à vide de 7cm : il s'agit de la différence d'élongation que l'on peut mesurer avec le potentiomètre (par exemple).
+
+	J'ai donc $2 l_0 - 2(l_0-max(x)) = 7cm$ ie : $$max(x) = 3.5 cm$$
+	Ceci est donc une contrainte supplémentaire sur k.
+
+	\subsection{Simulation numérique}
+
+	Pour trouver la valeur de k et calculer la position théorique du ressort à tout instant, on réalise une simulation numérique en 	Ocaml\footnote{Très bon langage de programmation enseigné en prépa}.
+
+	On calcule les différentes valeurs en donnant une valeur classique au $C_x$ de 0.6.
+	On calcule d'abord la position et l'accélération de la fusée sur sa longeur, ce qui correspont à ${a_e}$ puis la position du ressort 		à tout instant.
+
+	Le code complet du programme peut être visionné ici : \url{https://github.com/robocop/Mercury}
+
+	\subsection{Résultats}
+
+	Pour la fusée qui a volé, on trouve k = 11880 N soit 5 fois plus que le ressort que nous avions choisit : 
+	\begin{lstlisting}
+$ ./calculs.native 
+k = 11882.324219 N.m^-1
+Sortie de rampe t : 0.31  h = 3.94 	 v = 27.24 theta = 79  a = 91.19 
+Apogee          t : 15.73 h = 1328.00 v = 24.01 theta = 0	 a = -0.34 
+	\end{lstlisting}
+
+	A la place du ressort, on pourrait utiliser un capteur de distance infrarouge comme les Sharp gp2d120 pouvant mesurer une distance de 4 à 30 cm.
+	\newpage
+	
+	On peut alors choisir un ressort de 30 cm et une différence d'élongation de 15 cm : 
+	\begin{lstlisting}
+$ ./calculs.native -l0 0.3 -l_potar 0.15
+k = 6046.295166 N/m
+Sortie de rampe t : 0.31  h = 3.94    v = 27.24 theta = 79  a = 91.19 
+Apogee          t : 15.73 h = 1328.00 v = 24.01 theta = 0   a = -0.34 
+	\end{lstlisting}
 \end{document}
